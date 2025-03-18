@@ -12,7 +12,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     if (username === "admin" && password === "1234") {
         // Muestra un mensaje de éxito y redirige a otra página
         alert("Login exitoso");
-        window.location.href = "../html/Menu Ad.html";
+        window.location.href="../html/Menu Ad.html";
     } else {
         // Si las credenciales son incorrectas muestra un mensaje de error
         errorMsg.textContent = "Usuario o contraseña incorrectos";
