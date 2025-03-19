@@ -17,12 +17,27 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Contraseña ingresada:", password);
 
         if (username === "admin" && password === "1234") {
-            alert("Login exitoso");
-            console.log("Redirigiendo a Menu.html...");
-            window.location.href = "../html/MenuA.html";  // Ajusta si es necesario
+            // Mostrar ventana flotante "Cargando"
+            showLoadingModal();
+
+            // Después de 3 segundos, redirigir al siguiente HTML
+            setTimeout(function() {
+                console.log("Redirigiendo a Menu.html...");
+                window.location.href = "../html/MenuA.html";  // Ajusta si es necesario
+            }, 3000);  // 3 segundos
         } else {
             console.log("Credenciales incorrectas");
             errorMsg.textContent = "Usuario o contraseña incorrectos";
+            errorMsg.style.color = "red";  // Mantener el color rojo para el error
         }
     });
 });
+
+// Función para mostrar la ventana flotante "Cargando"
+function showLoadingModal() {
+    const modal = document.createElement('div');
+    modal.id = 'loadingModal';
+    modal.innerHTML = '<p>Cargando...</p>';
+    
+    document.body.appendChild(modal);
+}
