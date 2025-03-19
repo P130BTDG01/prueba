@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" href="../css/Login.css">
+    <script defer src="../js/credenciales.js"></script>  <!-- Se carga correctamente -->
 </head>
 
 <body>
@@ -14,11 +15,9 @@
             <h2>Iniciar Sesión</h2> 
             <input type="text" id="username" placeholder="Usuario" required>
             <input type="password" id="password" placeholder="Contraseña" required>
-            <button>Entrar</button>
+            <button type="submit">Entrar</button>  <!-- Se agregó el type="submit" -->
             <p id="error-msg" class="error"></p>
         </form>
     </div>
-
-    <script src="../js/credenciales.js"></script>
 </body>
 </html>
