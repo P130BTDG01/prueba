@@ -16,28 +16,35 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Usuario ingresado:", username);
         console.log("Contraseña ingresada:", password);
 
-        if (username === "admin" && password === "1234") {
-            // Mostrar ventana flotante "Cargando"
-            showLoadingModal();
+        // Muestra la ventana flotante "Cargando..."
+        showLoadingModal();
 
-            // Después de 3 segundos, redirigir al siguiente HTML
-            setTimeout(function() {
+        // Simula la validación de las credenciales
+        setTimeout(() => {
+            if (username === "admin" && password === "1234") {
                 console.log("Redirigiendo a Menu.html...");
-                window.location.href = "../html/MenuA.html";  // Ajusta si es necesario
-            }, 3000);  // 3 segundos
-        } else {
-            console.log("Credenciales incorrectas");
-            errorMsg.textContent = "Usuario o contraseña incorrectos";
-            errorMsg.style.color = "red";  // Mantener el color rojo para el error
-        }
+                window.location.href = "../html/MenuA.html";  // Redirige al siguiente HTML
+            } else {
+                console.log("Credenciales incorrectas");
+                errorMsg.textContent = "Usuario o contraseña incorrectos";
+                hideLoadingModal();
+            }
+        }, 3000); // Simulando un retraso de 3 segundos antes de redirigir
     });
-});
 
-// Función para mostrar la ventana flotante "Cargando"
-function showLoadingModal() {
-    const modal = document.createElement('div');
-    modal.id = 'loadingModal';
-    modal.innerHTML = '<p>Cargando...</p>';
-    
-    document.body.appendChild(modal);
-}
+    // Función para mostrar la ventana flotante "Cargando..."
+    function showLoadingModal() {
+        const modal = document.createElement('div');
+        modal.id = 'loadingModal';
+        modal.innerHTML = '<p>Cargando...</p>';
+        document.body.appendChild(modal);
+    }
+
+    // Función para ocultar la ventana flotante "Cargando..."
+    function hideLoadingModal() {
+        const modal = document.getElementById('loadingModal');
+        if (modal) {
+            modal.remove();
+        }
+    }
+});

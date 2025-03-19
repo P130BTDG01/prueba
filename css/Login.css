@@ -81,7 +81,7 @@ button:hover {
     z-index: 1000; /* Asegurarse de que el modal esté sobre todo */
 }
 
-/* Opcional: Animación para el modal (desaparecer después de 3 segundos) */
+/* Animación para que el modal desaparezca después de 3 segundos */
 @keyframes fadeOut {
     0% {
         opacity: 1;
