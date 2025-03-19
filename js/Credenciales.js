@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (username === "admin" && password === "1234") {
             alert("Login exitoso");
             console.log("Redirigiendo a Menu.html...");
-            window.location.href = "../html/Menu Ad.html";  // Ajusta si es necesario
+            window.location.href = "../html/MenuA.html";  // Ajusta si es necesario
         } else {
             console.log("Credenciales incorrectas");
             errorMsg.textContent = "Usuario o contraseña incorrectos";
