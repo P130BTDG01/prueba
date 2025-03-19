@@ -93,5 +93,5 @@ button:hover {
 }
 
 #loadingModal {
-    animation: fadeOut 3s forwards;
+    animation: fadeOut 5s forwards;
 }
