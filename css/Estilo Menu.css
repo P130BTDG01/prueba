@@ -56,7 +56,7 @@ body {
 
 /* Efecto hover */
 .btn:hover {
-    background: linear-gradient(to right, #9F2241, #9c2d49);
+    background: linear-gradient(to right, #bc955b, #bc955b);
     transform: scale(1.05);
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
