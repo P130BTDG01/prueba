@@ -21,9 +21,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Simula la validación de las credenciales
         setTimeout(() => {
+            // Primer conjunto de credenciales
             if (username === "admin" && password === "1234") {
                 console.log("Redirigiendo a Menu.html...");
                 window.location.href = "../html/MenuA.html";  // Redirige al siguiente HTML
+            }
+            // Segundo conjunto de credenciales
+            else if (username === "usuario" && password === "7894") {
+                console.log("Redirigiendo a MenuB.html...");
+                window.location.href = "../html/MenuB.html";  // Redirige a otro HTML
             } else {
                 console.log("Credenciales incorrectas");
                 errorMsg.textContent = "Usuario o contraseña incorrectos";
