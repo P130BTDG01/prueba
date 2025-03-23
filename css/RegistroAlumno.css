@@ -7,7 +7,7 @@ body {
     align-items: center;
     height: 100vh;
     /* Ruta actualizada para acceder a la imagen de fondo */
-    background: url('../img/fondo.jpg') no-repeat center center/cover;
+    background: url('../img/fondo2.jpg') no-repeat center center/cover;
     margin: 0;
     position: relative;
 }
