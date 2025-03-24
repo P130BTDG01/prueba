@@ -1,50 +1,62 @@
-// Función para validar que el campo 'Número de Empleado' solo permita números
-function validarNumeroEmpleado() {
-    const numeroEmpleado = document.getElementById('numeroEmpleado');
-    
-    // Eliminar cualquier carácter que no sea un número
-    numeroEmpleado.value = numeroEmpleado.value.replace(/[^0-9]/g, ''); // Reemplaza todo lo que no sea número
+document.addEventListener("DOMContentLoaded", function () {
+    // Capturamos el formulario
+    const form = document.querySelector("form");
 
-    // Limitar la longitud a exactamente 8 caracteres
-    if (numeroEmpleado.value.length > 8) {
-        numeroEmpleado.value = numeroEmpleado.value.slice(0, 8); // Limita a 8 caracteres
+    // Validación del número de empleado (8 dígitos)
+    document.getElementById("numeroEmpleado").addEventListener("input", function () {
+        const pattern = /^\d{8}$/;
+        validarCampo(this, pattern);
+    });
+
+    // Validación del número telefónico (10 dígitos)
+    document.getElementById("numTelefonico").addEventListener("input", function () {
+        const pattern = /^\d{10}$/;
+        validarCampo(this, pattern);
+    });
+
+    // Validación del correo electrónico (formato correcto)
+    document.getElementById("email").addEventListener("input", function () {
+        const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        validarCampo(this, pattern);
+    });
+
+    // Validación del formulario al enviarlo
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Evita el envío predeterminado
+
+        if (validarFormulario()) {
+            alert("Registro exitoso");
+            setTimeout(() => {
+                location.reload(); // Recarga la página después de 1.5 segundos
+            }, 1500);
+        } else {
+            alert("Por favor, completa correctamente todos los campos.");
+        }
+    });
+});
+
+// Función para validar un campo con una expresión regular
+function validarCampo(input, pattern) {
+    if (pattern.test(input.value)) {
+        input.classList.remove("error");
+    } else {
+        input.classList.add("error");
     }
 }
 
-// Función para validar que el campo 'Número Telefónico' solo permita números
-function validarNumeroTelefonico() {
-    const numeroTelefonico = document.getElementById('numTelefonico');
-    
-    // Eliminar cualquier carácter que no sea un número
-    numeroTelefonico.value = numeroTelefonico.value.replace(/[^0-9]/g, ''); // Reemplaza todo lo que no sea número
-
-    // Limitar la longitud a exactamente 10 caracteres
-    if (numeroTelefonico.value.length > 10) {
-        numeroTelefonico.value = numeroTelefonico.value.slice(0, 10); // Limita a 10 caracteres
-    }
-}
-
-// Función para validar el formulario antes de enviarlo
+// Función para validar todo el formulario antes de enviarlo
 function validarFormulario() {
-    let isValid = true;
+    let valido = true;
+    const inputs = document.querySelectorAll("input[required], select[required]");
 
-    // Validar 'Número de Empleado'
-    const numeroEmpleado = document.getElementById('numeroEmpleado');
-    if (!numeroEmpleado.value.match(/^\d{8}$/)) {
-        numeroEmpleado.classList.add('error');
-        isValid = false;
-    } else {
-        numeroEmpleado.classList.remove('error');
-    }
+    inputs.forEach(input => {
+        if (input.value.trim() === "" || input.classList.contains("error")) {
+            valido = false;
+            input.classList.add("error");
+        } else {
+            input.classList.remove("error");
+        }
+    });
 
-    // Validar 'Número Telefónico'
-    const numeroTelefonico = document.getElementById('numTelefonico');
-    if (!numeroTelefonico.value.match(/^\d{10}$/)) {
-        numeroTelefonico.classList.add('error');
-        isValid = false;
-    } else {
-        numeroTelefonico.classList.remove('error');
-    }
-
-    return isValid; // Retorna false si hay errores
+    return valido;
 }
