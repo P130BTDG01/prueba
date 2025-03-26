@@ -72,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         // Validación de la edad
-        if (!/^[0-9]+$/.test(edad) || edad < 18 || edad > 35) {
-            errores.push("La edad debe estar entre 18 y 35 años.");
+        if (!/^[0-9]+$/.test(edad) || edad < 18 || edad > 40) {
+            errores.push("La edad debe estar entre 18 y 40 años.");
         }
 
         // Si hay errores, mostrar los mensajes
