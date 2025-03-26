@@ -40,11 +40,6 @@ h1 {
     width: 100%;
 }
 
-/* Asegurar que ciertos campos ocupen toda la fila */
-#registroForm .form-group:nth-child(9) {
-    grid-column: span 1;
-}
-
 /* Estilo de inputs y select */
 input, select {
     padding: 8px;
@@ -57,61 +52,74 @@ input, select {
 .button-container {
     grid-column: span 2;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 15px;
-}
-
-/* Aseguramos que el botón de "Regresar" esté primero */
-.button-container button {
-    order: 1;  /* Establece el orden del botón de regresar */
-}
-
-/* Aseguramos que el botón de "Registrar" esté segundo */
-.button-container input {
-    order: 2;  /* Establece el orden del botón de registrar */
 }
 
 .button-container input,
 .button-container button {
-    background-color: #900C3F;
+    background-color: #900C3F; /* Rojo oscuro */
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 30px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
+    width: 45%;
 }
 
 .button-container button:hover,
 .button-container input:hover {
-    background-color: #965f36;
+    background-color: #965f36; /* Rojo claro */
 }
 
-/* Estilo para el contenedor de mensajes de error */
+
+/* Estilo para el contenedor de mensajes flotantes */
 #errorMessages {
-    background-color: #f8d7da;
+    background-color: rgba(248, 215, 218, 0.9);
     border: 1px solid #f5c6cb;
     color: #721c24;
     padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    display: none; /* Inicialmente oculto */
-    position: absolute;
+    position: fixed;
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    max-width: 90%;
+    border-radius: 5px;
+    font-size: 16px;
+    display: none; /* Oculto por defecto */
     z-index: 1000;
-}
-
-/* Estilo individual de los mensajes de error */
-.error-message {
-    margin: 5px 0;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Mostrar el contenedor cuando haya errores */
 #errorMessages.show {
     display: block;
+    animation: fadeOut 3s forwards;
+}
+
+
+/* Animación para que desaparezca después de 3 segundos */
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; display: none; }
+}
+
+/* Estilo del mensaje de cancelación */
+#cancelarButton {
+    background-color: #900C3F; /* Rojo claro */
+    color: white;
+    font-size: 16px;
+    padding: 12px 30px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    width: 45%;
+    transition: background-color 0.3s ease;
+}
+
+#cancelarButton:hover {
+    background-color: #965f36; /* Rojo más intenso */
 }
