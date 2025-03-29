@@ -1,33 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Capturamos el formulario
     const form = document.querySelector("form");
 
-    // Validación del número de empleado (8 dígitos)
-    document.getElementById("numeroEmpleado").addEventListener("input", function () {
-        const pattern = /^\d{8}$/;
-        validarCampo(this, pattern);
+    // Función para permitir solo letras y espacios
+    function restringirLetras(campo) {
+        campo.addEventListener("keypress", function (event) {
+            const key = event.key;
+            if (!/^[a-zA-ZÀ-ÿ\s]$/.test(key)) {
+                event.preventDefault(); // Evita que se escriban números o caracteres especiales
+            }
+        });
+
+        campo.addEventListener("input", function () {
+            this.value = this.value.replace(/[^a-zA-ZÀ-ÿ\s]/g, ""); // Borra cualquier número o carácter inválido
+        });
+    }
+
+    // Aplica la restricción a los campos de nombre y apellidos
+    restringirLetras(document.getElementById("nombre"));
+    restringirLetras(document.getElementById("apellidoPaterno"));
+    restringirLetras(document.getElementById("apellidoMaterno"));
+
+    // Restricción: Número de empleado (solo 8 dígitos numéricos)
+    const numeroEmpleado = document.getElementById("numeroEmpleado");
+    numeroEmpleado.addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, "").slice(0, 8);
     });
 
-    // Validación del número telefónico (10 dígitos)
-    document.getElementById("numTelefonico").addEventListener("input", function () {
-        const pattern = /^\d{10}$/;
-        validarCampo(this, pattern);
+    // Restricción: Número de teléfono (solo 10 dígitos numéricos)
+    const numTelefonico = document.getElementById("numTelefonico");
+    numTelefonico.addEventListener("input", function () {
+        this.value = this.value.replace(/\D/g, "").slice(0, 10);
     });
 
-    // Validación del correo electrónico (formato correcto)
-    document.getElementById("email").addEventListener("input", function () {
+    // Restricción: Correo electrónico (validación en tiempo real)
+    const email = document.getElementById("email");
+    email.addEventListener("input", function () {
         const pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         validarCampo(this, pattern);
     });
 
     // Validación del formulario al enviarlo
     form.addEventListener("submit", function (event) {
-        event.preventDefault(); // Evita el envío predeterminado
+        event.preventDefault();
 
         if (validarFormulario()) {
             alert("Registro exitoso");
             setTimeout(() => {
-                location.reload(); // Recarga la página después de 1.5 segundos
+                location.reload();
             }, 1500);
         } else {
             alert("Por favor, completa correctamente todos los campos.");
