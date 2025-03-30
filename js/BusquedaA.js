@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     botonModificar.addEventListener('click', function() {
-        window.location.href = 'modificar.html';
+        window.location.href = 'ModificarTr.html';
     });
 
     inputBuscarMatricula.addEventListener('input', function() {
