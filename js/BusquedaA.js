@@ -6,15 +6,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const mensajeErrorDiv = document.getElementById('mensaje-error');
     const botonRegresar = document.getElementById('boton-regresar');
     const botonModificar = document.getElementById('boton-modificar');
+    const botonCancelarBusqueda = document.getElementById('boton-cancelar-busqueda');
 
     const datosTutor = {
-        "15210075": {
-            nombre: "Juan Carlos",
-            apellidoPaterno: "Pacheco",
-            apellidoMaterno: "Gonzalez",
+        "15210011": {
+            nombre: "Diego",
+            apellidoPaterno: "Gonzalez",
+            apellidoMaterno: "Caballero",
             telefono: "5512345678",
-            correo: "juan.@ejemplo.com",
-            unidadEstudios: "UMB Tecamac"
+            correo: "Diego.@ejemplo.com",
+            unidadEstudios: "UMB Ecatepec"
         }
         // Aquí podrías añadir más datos de tutores
     };
@@ -61,7 +62,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     botonModificar.addEventListener('click', function() {
-        // Redirigir a la página modificar.html
         window.location.href = 'modificar.html';
     });
 
@@ -71,4 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
             this.value = this.value.slice(0, 8);
         }
     });
+
+    // Lógica para el botón Cancelar en la búsqueda
+    if (botonCancelarBusqueda) {
+        botonCancelarBusqueda.addEventListener('click', function() {
+            window.location.href = 'MenuB.html';
+        });
+    }
 });

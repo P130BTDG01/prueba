@@ -166,3 +166,26 @@ h1 {
 #boton-modificar:hover {
     background-color: #bc955b;
 }
+
+/* Estilos adicionales para la alineación del botón Cancelar */
+#formulario-busqueda table td {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y los botones */
+}
+
+#formulario-busqueda input[type="text"] {
+    flex-grow: 1; /* Permite que el input crezca para ocupar el espacio */
+}
+     /* Estilos adicionales para la alineación del botón Cancelar */
+        #formulario-busqueda table td {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px; /* Espacio entre el input y los botones */
+        }
+
+        #formulario-busqueda input[type="text"] {
+            flex-grow: 1; /* Permite que el input crezca para ocupar el espacio */
+        }
