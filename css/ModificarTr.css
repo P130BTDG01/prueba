@@ -23,7 +23,7 @@ form {
 }
 
 form::before {
-    content: "Modificar Tutorados";
+    content: "Modificar Tutorado";
     font-size: 30px;
     font-weight: bold;
     color: #9F2241;
