@@ -6,7 +6,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Ruta actualizada para acceder a la imagen de fondo */
     background: url('../img/fondo.jpg') no-repeat center center/cover;
     margin: 0;
     position: relative;
@@ -18,7 +17,7 @@ body {
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 40px;
-    width: 450px; /* Más ancho */
+    width: 450px;
     text-align: center;
 }
 
@@ -33,7 +32,7 @@ body {
 .botones {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    gap: 20px; /* Más espacio entre los botones */
+    gap: 20px;
 }
 
 /* Estilos de los botones */
@@ -67,7 +66,7 @@ body {
     bottom: 30px;
     right: 30px;
     padding: 12px 24px;
-    background-color: #808080; /* Gris */
+    background-color: #808080; 
     color: white;
     font-size: 16px;
     border-radius: 8px;
