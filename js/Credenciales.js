@@ -16,29 +16,29 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log("Usuario ingresado:", username);
         console.log("Contraseña ingresada:", password);
 
-        // Muestra la ventana flotante "Cargando..."
+       
         showLoadingModal();
 
-        // Simula la validación de las credenciales
+        
         setTimeout(() => {
-            // Primer conjunto de credenciales
+            
             if (username === "admin" && password === "1234") {
                 console.log("Redirigiendo a Menu.html...");
-                window.location.href = "../html/MenuA.html";  // Redirige al siguiente HTML
+                window.location.href = "../html/MenuA.html";  
             }
             // Segundo conjunto de credenciales
             else if (username === "usuario" && password === "7894") {
                 console.log("Redirigiendo a MenuB.html...");
-                window.location.href = "../html/MenuB.html";  // Redirige a otro HTML
+                window.location.href = "../html/MenuB.html";  
             } else {
                 console.log("Credenciales incorrectas");
                 errorMsg.textContent = "Usuario o contraseña incorrectos";
                 hideLoadingModal();
             }
-        }, 3000); // Simulando un retraso de 3 segundos antes de redirigir
+        }, 3000); 
     });
 
-    // Función para mostrar la ventana flotante "Cargando..."
+   
     function showLoadingModal() {
         const modal = document.createElement('div');
         modal.id = 'loadingModal';
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.appendChild(modal);
     }
 
-    // Función para ocultar la ventana flotante "Cargando..."
+   
     function hideLoadingModal() {
         const modal = document.getElementById('loadingModal');
         if (modal) {

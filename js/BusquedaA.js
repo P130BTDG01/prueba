@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-   
     if (botonCancelarBusqueda) {
         botonCancelarBusqueda.addEventListener('click', function() {
             window.location.href = 'MenuB.html';

@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Función para confirmar antes de regresar
+    
     document.getElementById('cancelarButton').addEventListener('click', function(event) {
         event.preventDefault();
         event.stopPropagation();
-        // Mostrar un cuadro de confirmación
+        
         var confirmarCancelacion = confirm("¿Estás seguro de que deseas cancelar el registro?");
         if (confirmarCancelacion) {
-            // Si el usuario acepta, regresa al HTML anterior
+            
             window.history.back();
         }
     });
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Validar que solo se ingresen números y que sean exactamente 10 dígitos en el teléfono
+   
     telefonoInput.addEventListener("input", function() {
         this.value = this.value.replace(/\D/g, "").slice(0, 10);
     });
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Validar que solo se ingresen letras en nombre y apellidos
+   
     function validarTexto(event) {
         if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(event.key)) {
             event.preventDefault();
@@ -61,22 +61,22 @@ document.addEventListener("DOMContentLoaded", function () {
         let carrera = document.getElementById("carrera").value;
         let errores = [];
 
-        // Validación de la matrícula
+      
         if (!/^\d{8}$/.test(matricula)) {
             errores.push("La matrícula debe contener exactamente 8 dígitos numéricos.");
         }
 
-        // Validación del teléfono
+       
         if (telefono.length !== 10) {
             errores.push("El teléfono debe contener exactamente 10 dígitos numéricos.");
         }
 
-        // Validación de la edad
+      
         if (!/^[0-9]+$/.test(edad) || edad < 18 || edad > 40) {
             errores.push("La edad debe estar entre 18 y 40 años.");
         }
 
-        // Si hay errores, mostrar los mensajes
+       
         if (errores.length > 0) {
             event.preventDefault();
             mostrarErrores(errores);
@@ -85,13 +85,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Función para mostrar los errores
+   
     function mostrarErrores(errores) {
         errorContainer.innerHTML = errores.join("<br>");
         errorContainer.classList.add("show");
     }
 
-    // Función para mostrar un mensaje de error específico
+    
     function mostrarMensajeError(mensaje) {
         errorContainer.innerHTML = mensaje;
         errorContainer.classList.add("show");
