@@ -135,9 +135,9 @@ h1 {
 
 .botones-info {
     display: flex;
-    justify-content: flex-end; /* Alinear los botones a la derecha */
-    gap: 10px; /* Espacio entre los botones */
-    margin-top: 15px; /* Espacio entre la información y los botones */
+    justify-content: flex-end;
+    gap: 10px; 
+    margin-top: 15px; 
 }
 
 .botones-info button {
@@ -159,7 +159,7 @@ h1 {
 }
 
 #boton-modificar {
-    background-color: #9F2241; /* Un color azul para el botón Modificar */
+    background-color: #9F2241; 
     color: white;
 }
 
@@ -167,25 +167,24 @@ h1 {
     background-color: #bc955b;
 }
 
-/* Estilos adicionales para la alineación del botón Cancelar */
+
 #formulario-busqueda table td {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Espacio entre el input y los botones */
-}
+    gap: 10px; }
 
 #formulario-busqueda input[type="text"] {
-    flex-grow: 1; /* Permite que el input crezca para ocupar el espacio */
+    flex-grow: 1;
 }
-     /* Estilos adicionales para la alineación del botón Cancelar */
+     
         #formulario-busqueda table td {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px; /* Espacio entre el input y los botones */
+            gap: 10px; 
         }
 
         #formulario-busqueda input[type="text"] {
-            flex-grow: 1; /* Permite que el input crezca para ocupar el espacio */
+            flex-grow: 1;
         }

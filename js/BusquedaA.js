@@ -17,17 +17,17 @@ document.addEventListener('DOMContentLoaded', function() {
             correo: "Diego.@ejemplo.com",
             unidadEstudios: "UMB Ecatepec"
         }
-        // Aquí podrías añadir más datos de tutores
+       
     };
 
-    // Ocultar la información del tutor y el mensaje de error al inicio
+    
     infoTutorDiv.style.display = 'none';
     mensajeErrorDiv.style.display = 'none';
 
     botonBuscar.addEventListener('click', function() {
         const matricula = inputBuscarMatricula.value;
 
-        // Ocultar información y mensaje de error al hacer una nueva búsqueda
+      
         infoTutorDiv.style.display = 'none';
         mensajeErrorDiv.style.display = 'none';
         formularioBusquedaDiv.classList.remove('ocultar');
@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Lógica para el botón Cancelar en la búsqueda
+   
     if (botonCancelarBusqueda) {
         botonCancelarBusqueda.addEventListener('click', function() {
             window.location.href = 'MenuB.html';

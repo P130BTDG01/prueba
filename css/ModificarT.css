@@ -10,10 +10,10 @@ body {
 }
 
 form {
-    background-color: rgba(255, 255, 255, 0.836);
+    background-color: #ffffffd5;
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(180, 176, 176, 0.1);
+    box-shadow: 0px 0px 10px #b4b0b01a;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px 15px;
@@ -35,7 +35,7 @@ form::before {
 
 .form-group {
     display: grid;
-    grid-template-columns: auto 1fr; /* La etiqueta ocupa su espacio, el input el resto */
+    grid-template-columns: auto 1fr; 
     align-items: center;
     gap: 4px;
     padding: 2px 0;
@@ -45,7 +45,7 @@ form::before {
     text-align: left;
     font-weight: bold;
     font-size: 14px;
-    padding-right: 5px; /* Agregamos un poco de espacio a la derecha de la etiqueta */
+    padding-right: 5px; 
 }
 
 .form-group input[type="text"],
@@ -53,13 +53,13 @@ form::before {
 .form-group input[type="email"],
 .form-group input[type="number"],
 .form-group input[list] {
-    width: 100%; /* Aseguramos que ocupe todo el ancho de su celda */
+    width: 100%; 
     padding: 7px;
     border: 1px solid #dacece;
     border-radius: 5px;
     font-size: 16px;
     margin: 0;
-    box-sizing: border-box; /* Incluye el padding y el border en el ancho total */
+    box-sizing: border-box; 
 }
 
 input[type="hidden"] {
@@ -68,11 +68,11 @@ input[type="hidden"] {
 }
 
 .botones-container {
-    grid-column: 1 / 3; /* Ocupa ambas columnas principales */
-    display: flex; /* Usamos flexbox para alinear los botones */
-    justify-content: center; /* Centramos los botones horizontalmente */
-    gap: 10px; /* Espacio entre los botones */
-    margin-top: 10px; /* Espacio superior para los botones */
+    grid-column: 1 / 3; 
+    display: flex; 
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 10px; 
 }
 
 button {
@@ -80,28 +80,28 @@ button {
     border-radius: 12px;
     font-size: 15px;
     cursor: pointer;
-    width: auto; /* El ancho se ajustará al contenido */
-    border: none; /* Aseguramos que no haya borde por defecto */
+    width: auto; 
+    border: none; 
 }
 
-/* Estilos para el botón con ID boton-regresar (ahora el botón Cancelar) */
+
 #boton-regresar {
     background-color: #9F2241;
-    color: white;
+    color: #ffffff;
 }
 
 #boton-regresar:hover {
     background-color: #bc955b;
 }
 
-/* Estilo para el botón de guardar (mantenemos un estilo diferente) */
+
 button[type="submit"] {
-    background-color: #6c757d; /* Un color diferente para distinguir */
-    color: white;
+    background-color: #6c757d; 
+    color: #ffffff;
 }
 
 button[type="submit"]:hover {
-    background-color: #565e64; /* Un ligero oscurecimiento al pasar el ratón */
+    background-color: #565e64; 
 }
 
 #mensajeConfirmacion {

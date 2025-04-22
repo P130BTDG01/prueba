@@ -26,9 +26,9 @@ body::before {
     flex-direction: column;
     align-items: stretch;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: #ffffffe6;
     border-radius: 10px;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 20px #0000004d;
     max-width: 400px;
     width: 90%;
     margin: 20px auto;
@@ -63,7 +63,7 @@ h1 {
 
 #formulario-busqueda button {
     background-color: #9F2241;
-    color: white;
+    color: #ffffff;
     padding: 10px 12px;
     border: none;
     border-radius: 8px;
@@ -124,7 +124,7 @@ h1 {
 
 #mensaje-error {
     margin-top: 10px;
-    color: red;
+    color: #ff0000;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
@@ -135,9 +135,9 @@ h1 {
 
 .botones-info {
     display: flex;
-    justify-content: flex-end; /* Alinear los botones a la derecha */
-    gap: 10px; /* Espacio entre los botones */
-    margin-top: 15px; /* Espacio entre la información y los botones */
+    justify-content: flex-end; 
+    gap: 10px; 
+    margin-top: 15px; 
 }
 
 .botones-info button {
@@ -151,7 +151,7 @@ h1 {
 
 #boton-regresar {
     background-color: #9F2241;
-    color: white;
+    color: #ffffff;
 }
 
 #boton-regresar:hover {
@@ -159,33 +159,33 @@ h1 {
 }
 
 #boton-modificar {
-    background-color: #9F2241; /* Un color azul para el botón Modificar */
-    color: white;
+    background-color: #9F2241; 
+    color: #ffffff;
 }
 
 #boton-modificar:hover {
     background-color: #bc955b;
 }
 
-/* Estilos adicionales para la alineación del botón Cancelar */
+
 #formulario-busqueda table td {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Espacio entre el input y los botones */
+    gap: 10px; 
 }
 
 #formulario-busqueda input[type="text"] {
-    flex-grow: 1; /* Permite que el input crezca para ocupar el espacio */
+    flex-grow: 1; 
 }
-     /* Estilos adicionales para la alineación del botón Cancelar */
+     
         #formulario-busqueda table td {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 10px; /* Espacio entre el input y los botones */
+            gap: 10px; 
         }
 
         #formulario-busqueda input[type="text"] {
-            flex-grow: 1; /* Permite que el input crezca para ocupar el espacio */
+            flex-grow: 1; 
         }
